@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 这里填写对应的Dao文件所在的路径 -->
+<mapper namespace="com.ds.hnw.dsgcservice.Dao.logDao"    >
+    <!-- 配置查询所有操作 -->
+    <select id="queryLogInfo" parameterType="com.ds.hnw.dsgcservice.entry.LogEntry"
+            resultType="com.ds.hnw.dsgcservice.entry.logResult">
+       select b.* from
+       (select ROWNUM as rnum,a.track_Id,a.biz_Status from dsgc_log_instance a where 1=1
+       <if test="servNo!=null and servNo!=''">
+           and serv_no=#{servNo}
+       </if>
+
+       ) b
+
+    </select>
+</mapper>

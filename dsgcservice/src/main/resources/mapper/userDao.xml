@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 这里填写对应的Dao文件所在的路径 -->
+<mapper namespace="com.ds.hnw.dsgcservice.Dao.userDao"    >
+    <!-- 配置查询所有操作 -->
+    <select id="findUserByName" resultType="com.ds.hnw.dsgcservice.entry.User">
+       select USER_NAME as userName,USER_PASSWORD as passWord,IS_LOCKED as isLocked from dsgc_user
+       where USER_NAME=#{username}
+    </select>
+</mapper>
