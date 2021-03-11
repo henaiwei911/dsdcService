@@ -27,6 +27,7 @@ public class userController {
     @ApiOperation(value = "用户登录接口", notes = "用户登录接口")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
 
+    //git修改测试
     public Response login(@RequestBody User u) {
         if (u == null || StringUtils.isEmpty(u.getUserName()) || StringUtils.isEmpty(u.getPassWord())) {
             return Response.error("账号密码不能为空").setMessage("账号密码不能为空");
